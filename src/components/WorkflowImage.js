@@ -60,7 +60,7 @@ const WorkflowImage = () => {
                             : <div className="w-[100%]  h-[100%]" >
                                 <input id="image" className="text-center hidden" type="file" accept="image/*" onChange={handleFile} />
 
-                                <img src={image} alt="your's uploaded Image" className="w-[100%] h-[100%] rounded-xl" />
+                                <img src={image} alt="pearmedia ai" className="w-[100%] h-[100%] rounded-xl" />
                             </div>
                     }
 
