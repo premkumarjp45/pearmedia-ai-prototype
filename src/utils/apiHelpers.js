@@ -5,7 +5,7 @@ const getHFToken = () => {
     const hftToken = process.env.REACT_APP_HF_TOKEN
     return hftToken
 }
-const token = getHFToken()
+
 
 const enhancementSystemPrompt = "You are an expert prompt engineer for AI image generation. Transform the following simple request into a vivid, 50-word descriptive masterpiece. Include specific details about lighting (e.g., golden hour, soft ambient), camera angle (e.g., low angle, bird's eye view), and artistic style (e.g., cinematic, oil painting, cyberpunk). Output ONLY the enhanced prompt, no explanations.";
 

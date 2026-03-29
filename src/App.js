@@ -1,11 +1,10 @@
 
-import { useContext, useState } from "react"
+import { useContext } from "react"
 import MediaContext from "./context/MediaContext"
 import Navbar from "./components/Navbar.js"
-import { FiUpload } from "react-icons/fi";
 import WorkFlowImage from "./components/WorkflowImage.js"
 import WorkflowText from "./components/WorkflowText"
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import './App.css';
 
 
@@ -14,10 +13,6 @@ import './App.css';
 function App() {
 
   const { activeTabId } = useContext(MediaContext)
-
-
-
-
 
 
   return (

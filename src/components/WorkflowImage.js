@@ -3,6 +3,7 @@ import { useState } from "react"
 import { toast } from "react-toastify"
 import { FiUpload } from "react-icons/fi";
 import { analyzeImage } from "../utils/apiHelpers.js"
+
 const WorkflowImage = () => {
     const [image, setImage] = useState('')
     const [fileBase64, setFileBase64] = useState(undefined)
@@ -41,6 +42,7 @@ const WorkflowImage = () => {
 
             const result = await analyzeImage(fileBase64)
             console.log(result)
+            toast.error("API KEY ERROR")
         }
 
         return (
