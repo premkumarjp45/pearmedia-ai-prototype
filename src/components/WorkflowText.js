@@ -1,9 +1,20 @@
-
-
+import { useState } from "react"
+import { toast } from "react-toastify"
+import { getEnhancedPrompt } from "../utils/apiHelpers.js"
 const WorkflowText = () => {
 
 
+    const [userPrompt, setUserPrompt] = useState('')
 
+
+
+    const onClickOnEnhancePrompt = async () => {
+        if (!userPrompt) {
+            return toast.error("Please enter valid user prompt")
+        }
+        const result = await getEnhancedPrompt(userPrompt)
+        console.log(result)
+    }
 
     const onRenderCreateStudio = () => {
         return (
@@ -11,12 +22,12 @@ const WorkflowText = () => {
 
                 <h1 className="text-md sm:text-xl font-bold text-gray-700 text-center">Creative Studio AI Text Generator</h1>
                 <div className="my-5">
-                    <textarea placeholder="A luxury car parked in a studio environment...." className="border w-full rounded-xl p-4 outline-none border-gray-500 text-md font-semibold text-gray-600 " rows="3"   >
+                    <textarea value={userPrompt} onChange={(e) => setUserPrompt(e.target.value)} placeholder="A luxury car parked in a studio environment...." className="border w-full rounded-xl p-4 outline-none border-gray-500 text-md font-semibold text-gray-600 " rows="3"   >
 
 
                     </textarea>
                     <div className="flex justify-end my-2">
-                        <button type="button" className="text-white bg-indigo-600 hover:bg-indigo-700 text-xs px-5 py-2 rounded-md sm:text-sm font-semibold cursor-pointer ">Enhance Prompt </button>
+                        <button onClick={onClickOnEnhancePrompt} type="button" className="text-white bg-indigo-600 hover:bg-indigo-700 text-xs px-5 py-2 rounded-md sm:text-sm font-semibold cursor-pointer ">Enhance Prompt </button>
                     </div>
                 </div>
 
